@@ -1,0 +1,102 @@
+[
+  {
+    "id": "d2a4c6e8f0b1a3c5e7d9f1a2b3c4d5e6",
+    "type": "Credit",
+    "amount": 56.23,
+    "name": "H-E-B",
+    "description": "Groceries - Cedar Park, TX",
+    "date": "2025-10-24T09:05:00.000Z",
+    "authorizedUser": "Diana"
+  },
+  {
+    "id": "b7f2c3d9a4e1f0b6c8d3e5f7a1b2c4d8",
+    "type": "Credit",
+    "amount": 14.06,
+    "name": "Apple",
+    "description": "Card Number Used",
+    "date": "2025-10-23T12:10:00.000Z",
+    "pending": true,
+    "authorizedUser": "Diana"
+  },
+  {
+    "id": "1f2e3d4c5b6a7980a1b2c3d4e5f6a7b8",
+    "type": "Payment",
+    "amount": 125.0,
+    "name": "Payment",
+    "description": "From JPMorgan Chase Bank National Association",
+    "date": "2025-10-22T18:40:00.000Z"
+  },
+  {
+    "id": "3a9f7c2e1d0b5f6a7c8e9d1b2a3c4e5f",
+    "type": "Payment",
+    "amount": 174.0,
+    "name": "Payment",
+    "description": "From JPMorgan Chase Bank National Association",
+    "date": "2025-10-21T15:20:00.000Z"
+  },
+  {
+    "id": "6e1a9c3d5b7f0e2c4a8d9b1f3c5e7a0",
+    "type": "Credit",
+    "amount": 3.24,
+    "name": "Apple",
+    "description": "Card Number Used",
+    "date": "2025-10-21T09:35:00.000Z",
+    "authorizedUser": "Diana"
+  },
+  {
+    "id": "f1c3e5a7b9d0e2f4a6c8b1d3e5f7a9c",
+    "type": "Payment",
+    "amount": 99.71,
+    "name": "Payment",
+    "description": "From JPMorgan Chase Bank National Association",
+    "date": "2025-10-18T10:00:00.000Z"
+  },
+  {
+    "id": "0d9a7b6c5e4f3a2b1c8d7e6f5a4b3c2",
+    "type": "Payment",
+    "amount": 73.58,
+    "name": "Payment",
+    "description": "From JPMorgan Chase Bank National Association",
+    "date": "2025-10-17T10:00:00.000Z"
+  },
+  {
+    "id": "a3c5e7f9b1d0c2e4f6a8b9d1e3f5c7a",
+    "type": "Credit",
+    "amount": 21.61,
+    "name": "IKEA",
+    "description": "Round Rock, TX",
+    "date": "2025-10-01T14:00:00.000Z"
+  },
+  {
+    "id": "9f8e7d6c5b4a3c2d1e0f9a8b7c6d5e4",
+    "type": "Credit",
+    "amount": 73.58,
+    "name": "Target",
+    "description": "Cedar Park, TX",
+    "date": "2025-09-28T17:30:00.000Z"
+  },
+  {
+    "id": "2b4d6f8a0c2e4f6a8b0d2f4e6a8c0e2",
+    "type": "Credit",
+    "amount": 12.99,
+    "name": "Spotify",
+    "description": "Monthly subscription",
+    "date": "2025-09-10T08:00:00.000Z"
+  },
+  {
+    "id": "e1f3a5c7b9d0f2e4a6c8b0d2f4a6c8e",
+    "type": "Credit",
+    "amount": 45.0,
+    "name": "Gas Station",
+    "description": "Fuel purchase",
+    "date": "2025-09-05T19:15:00.000Z"
+  },
+  {
+    "id": "c4e6f8a1b3d5f7e9c0a2d4f6e8b1c3d",
+    "type": "Credit",
+    "amount": 7.5,
+    "name": "Airalo",
+    "description": "RBC Bank Debit Card",
+    "date": "2025-05-26T17:47:00.000Z"
+  }
+]
