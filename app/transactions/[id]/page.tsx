@@ -46,8 +46,10 @@ export default async function TransactionDetailPage({ params }: Props) {
         <div className="bg-white rounded-xl p-4 ring-1 ring-zinc-100">
           <dl className="grid grid-cols-1 gap-3">
             <div className="font-bold">
-              <dt>Status:</dt>
-              <dd>{transaction.pending ? "Pending" : "Approved"}</dd>
+              <dt className="inline">Status:</dt>{" "}
+              <dd className="inline">
+                {transaction.pending ? "Pending" : "Approved"}
+              </dd>
             </div>
             <div>
               <dt className="text-zinc-500">Description</dt>
