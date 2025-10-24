@@ -7,7 +7,7 @@
     "lint": "eslint"
   },
   "engines": {
-    "node": "24"
+    "node": "22"
   },
   "browserslist": [
     "baseline widely available"
