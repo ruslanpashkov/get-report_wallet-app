@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
-import { getTransactionById } from "@/lib/data";
-import { formatAmountForType } from "@/lib/format";
+import { getTransactionDetailData } from "@/lib/services";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -13,61 +12,47 @@ interface Props {
 
 export default async function TransactionDetailPage({ params }: Props) {
   const { id: transactionId } = await params;
-  const transaction = getTransactionById(transactionId);
-  if (!transaction) {
+  const data = getTransactionDetailData(transactionId);
+
+  if (!data) {
     redirect("/transactions");
   }
+
+  const { transaction, formattedAmount, formattedDate, status } = data;
+
   return (
     <main className="py-4">
-      <Link href="/transactions" className="py-4 pr-4 text-blue-500">
+      <Link href="/transactions" className="py-4 pr-4 text-link-primary">
         <span className="sr-only">Back</span>
         <FontAwesomeIcon
           icon={faChevronLeft}
+          size="lg"
           color="currentColor"
           aria-hidden="true"
         />
       </Link>
-      <div className="p-4 mb-6 text-center">
-        <div className="py-4 text-5xl font-bold">
-          {formatAmountForType(transaction.amount, transaction.type)}
+      <div className="p-4 mb-2 text-center">
+        <div className="mb-2 text-6xl font-bold">{formattedAmount}</div>
+        <div className="text-text-secondary font-medium">
+          {transaction.name}
         </div>
-        <div className="text-zinc-500 font-medium">{transaction.name}</div>
-        <div className="text-zinc-500 font-medium">
-          {new Date(transaction.date).toLocaleString("en-US", {
-            month: "numeric",
-            day: "numeric",
-            year: "numeric",
-            hour: "2-digit",
-            minute: "2-digit",
-          })}
-        </div>
+        <div className="text-text-secondary font-medium">{formattedDate}</div>
       </div>
       <div className="p-4">
-        <div className="bg-white rounded-xl p-4 ring-1 ring-zinc-100">
-          <dl className="grid grid-cols-1 gap-3">
-            <div className="font-bold">
-              <dt className="inline">Status:</dt>{" "}
-              <dd className="inline">
-                {transaction.pending ? "Pending" : "Approved"}
-              </dd>
-            </div>
-            <div>
-              <dt className="text-zinc-500">Description</dt>
-              <dd>{transaction.description}</dd>
-            </div>
+        <div className="bg-foreground-primary rounded-xl p-4 ring-1 ring-border-primary/20">
+          <div className="mb-4">
+            <p className="font-bold">Status: {status}</p>
+            <p className="text-text-secondary">{transaction.description}</p>
             {transaction.authorizedUser && (
-              <div>
-                <dt className="text-zinc-500">Authorized User</dt>
-                <dd>{transaction.authorizedUser}</dd>
-              </div>
+              <p className="text-text-secondary">
+                Authorized User: {transaction.authorizedUser}
+              </p>
             )}
-            <div className="flex justify-between border-t border-zinc-200 pt-3 font-semibold">
-              <dt>Total</dt>
-              <dd>
-                {formatAmountForType(transaction.amount, transaction.type)}
-              </dd>
-            </div>
-          </dl>
+          </div>
+          <div className="flex justify-between border-t border-border-primary pt-3 font-semibold">
+            <dt>Total</dt>
+            <dd>{formattedAmount}</dd>
+          </div>
         </div>
       </div>
     </main>

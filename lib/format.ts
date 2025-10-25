@@ -33,9 +33,19 @@ export function formatFriendlyDate(dateIsoString: string): string {
       Date.UTC(date.getFullYear(), date.getMonth(), date.getDate())) /
       MS_IN_DAY
   );
+  if (differenceInDays === 0) {
+    return "Today";
+  }
+  if (differenceInDays === 1) {
+    return "Yesterday";
+  }
   const withinLastWeekExclusive = differenceInDays < DAYS_IN_WEEK;
   if (withinLastWeekExclusive) {
     return date.toLocaleDateString(undefined, { weekday: "long" });
   }
-  return date.toLocaleDateString();
+  return date.toLocaleDateString("en-US", {
+    day: "numeric",
+    month: "numeric",
+    year: "2-digit",
+  });
 }

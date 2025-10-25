@@ -1,7 +1,7 @@
 import { SummaryBlocks } from "@/components/SummaryBlocks";
 import { LatestTransactions } from "@/components/LatestTransactions";
 
-export const dynamic = "force-static";
+export const dynamic = "force-dynamic";
 
 export default function TransactionsListPage() {
   return (

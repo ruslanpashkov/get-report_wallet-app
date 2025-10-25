@@ -11,6 +11,7 @@ export interface Transaction {
   date: string; // ISO string
   pending?: boolean;
   authorizedUser?: string;
+  icon: string;
 }
 
 export interface WalletSummary {

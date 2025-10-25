@@ -1,21 +1,21 @@
-export const DARK_BG_CLASSES: string[] = [
-  "bg-zinc-800",
-  "bg-slate-800",
-  "bg-neutral-800",
-  "bg-stone-800",
-  "bg-blue-800",
-  "bg-indigo-800",
-  "bg-violet-800",
-  "bg-purple-800",
-  "bg-emerald-800",
-  "bg-teal-800",
-  "bg-cyan-800",
-  "bg-rose-800",
-  "bg-orange-800",
-  "bg-amber-800",
+export const DARK_COLORS: string[] = [
+  "#1a2332",
+  "#2d1b3d",
+  "#1f2937",
+  "#3d2817",
+  "#1e3a5f",
+  "#2e1a47",
+  "#3b1e54",
+  "#4a1f5c",
+  "#1b4d3e",
+  "#1f4a4a",
+  "#1e3d52",
+  "#5c1f2f",
+  "#4d2e1a",
+  "#3d2f1f",
 ];
 
-export function getDarkBgClassForSeed(seed: string): string {
+export function getDarkColorForSeed(seed: string): string {
   let hash = 0;
   for (let index = 0; index < seed.length; index += 1) {
     const charCode = seed.charCodeAt(index);
@@ -23,6 +23,6 @@ export function getDarkBgClassForSeed(seed: string): string {
     hash |= 0; // Convert to 32bit integer
   }
   const positiveHash = Math.abs(hash);
-  const selectedIndex = positiveHash % DARK_BG_CLASSES.length;
-  return DARK_BG_CLASSES[selectedIndex];
+  const selectedIndex = positiveHash % DARK_COLORS.length;
+  return DARK_COLORS[selectedIndex];
 }
