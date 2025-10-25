@@ -13,11 +13,6 @@ import { getDarkColorForSeed } from "@/lib/colors";
 import { getTransactionIcon } from "@/lib/icons";
 import type { Transaction } from "@/lib/types";
 
-/**
- * Service functions for server components.
- * These replace hooks since server components cannot use React hooks.
- */
-
 export function getTransactionDetailData(transactionId: string) {
   const transaction = getTransactionById(transactionId);
 
