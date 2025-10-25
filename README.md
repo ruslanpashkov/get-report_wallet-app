@@ -4,7 +4,7 @@ A minimal Next.js app for viewing wallet transactions and points summary. Built 
 
 ## Requirements
 
-- Node 24+
+- Node 22+
 
 ## Quick start
 
